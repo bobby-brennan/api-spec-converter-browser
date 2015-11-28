@@ -66,20 +66,12 @@ html(lang='en')
             return;
           }
           $scope.running = true;
-          $.ajax({
-            url: '/spec-converter/convert',
-            method: 'POST',
-            data: JSON.stringify($scope.form),
-            headers: {'Content-Type': 'application/json'},
-          })
-          .done(function(data) {
-            $scope.spec = JSON.stringify(data, null, 2);
-          })
-          .fail(function(xhr) {
-            console.log('fail', xhr.responseText);
-            $scope.error = xhr.responseText || 'Unknown error';
-          })
-          .always(function() {
+          APISpecConverter.convert($scope.form, function(err, result) {
+            if (err) {
+              $scope.error = err;
+            } else {
+              $scope.spec = JSON.stringify(result.spec, null, 2);
+            }
             $scope.running = false;
             $scope.$apply();
           })
