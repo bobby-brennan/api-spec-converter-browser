@@ -26,5 +26,8 @@
     "GoogleDiscovery",
     "WADL",
     "I/O Docs"
-  ]
+  ],
+  "dependencies": {
+    "file-saver.js": "~1.20150507.2"
+  }
 }
