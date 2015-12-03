@@ -3,7 +3,6 @@
   "description": "Convert between API description formats such as Swagger and RAML",
   "main": "api-spec-converter.js",
   "version": "1.5.0",
-
   "authors": [
     "Bobby Brennan <bobby@lucybot.com> (https://lucybot.com)",
     "Ivan Goncharov <ivan.goncharov.ua@gmail.com> (http://apis.guru)"
